@@ -3,6 +3,15 @@ import math
 from urllib.parse import urlparse
 from collections import Counter
 
+def normalize_url(url: str) -> str:
+    """Strip scheme to match training data format"""
+    url = url.strip()
+    if url.startswith("https://"):
+        url = url[8:]
+    elif url.startswith("http://"):
+        url = url[7:]
+    return url
+
 
 def calculate_entropy(string):
     if not string:
@@ -17,8 +26,13 @@ def calculate_entropy(string):
 
 
 def extract_features(url: str) -> dict:
+    url = normalize_url(url)
+    if url.startswith("https://"):
+        url = url[8:]
+    elif url.startswith("http://"):
+        url = url[7:]
     try:
-        parsed = urlparse(url)
+        parsed = urlparse("http://" + url)
         domain = parsed.netloc
         path = parsed.path
 

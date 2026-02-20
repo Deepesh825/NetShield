@@ -2,42 +2,59 @@ import joblib
 import os
 import numpy as np
 
-# Define the absolute path to where train.py saved the model
-MODEL_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), "model", "url_model.pkl")
+MODEL_PATH = os.path.join(
+    os.path.dirname(os.path.dirname(__file__)), 
+    "model", "url_model.pkl"
+)
 
-# Load the model into memory once when the application starts
+# Known safe domains whitelist
+SAFE_DOMAINS = {
+    "google.com", "youtube.com", "facebook.com",
+    "wikipedia.org", "twitter.com", "instagram.com",
+    "linkedin.com", "github.com", "microsoft.com",
+    "apple.com", "amazon.com", "netflix.com",
+    "reddit.com", "stackoverflow.com", "gmail.com"
+}
+
 try:
     rf_model = joblib.load(MODEL_PATH)
 except FileNotFoundError:
     rf_model = None
-    print(f"Warning: Model file not found at {MODEL_PATH}. Run model/train.py first.")
+    print(f"Warning: Model not found. Run train.py first.")
+
+def get_domain(url: str) -> str:
+    url = url.strip()
+    if url.startswith("https://"):
+        url = url[8:]
+    elif url.startswith("http://"):
+        url = url[7:]
+    return url.split("/")[0].replace("www.", "")
 
 def predict_url(extracted_features: dict) -> tuple:
-    """
-    Used for Tier 1 Local ML Prediction in `core/analyzer.py`,
-    
-    Takes the extracted features dictionary, passes it to the Random Forest,
-    and returns a tuple: (Prediction_String, Confidence_Score)
-    """
     if rf_model is None:
         return "Error: Model not loaded", 0.0
 
-    # Convert the dictionary of features into a 2D numpy array (1 row, N columns)
     feature_values = list(extracted_features.values())
     X_input = np.array(feature_values).reshape(1, -1)
 
-    # predict() returns an array like [0] or [1]
-    prediction_code = rf_model.predict(X_input)[0]
-    
-    # predict_proba() returns probabilities for each class, e.g., [[0.2, 0.8]]
-    # Index 0 is probability of being Benign (0), Index 1 is Malicious (1)
     probabilities = rf_model.predict_proba(X_input)[0]
-    
-    if prediction_code == 0:
-        prediction_str = "Safe"
-        confidence = probabilities[0]  # Confidence it is safe
-    else:
-        prediction_str = "Malicious"
-        confidence = probabilities[1]  # Confidence it is malicious
+    prediction_code = rf_model.predict(X_input)[0]
 
-    return prediction_str, float(confidence)
+    if prediction_code == 0:
+        return "Safe", float(probabilities[0])
+    else:
+        return "Malicious", float(probabilities[1])
+
+def predict_url_full(url: str, extracted_features: dict) -> tuple:
+    """
+    Full prediction with whitelist check first
+    Returns: (prediction, confidence, source)
+    """
+    # Check whitelist first
+    domain = get_domain(url)
+    if domain in SAFE_DOMAINS:
+        return "Safe", 0.99, "Whitelist"
+
+    # Then use ML model
+    prediction, confidence = predict_url(extracted_features)
+    return prediction, confidence, "ML"
