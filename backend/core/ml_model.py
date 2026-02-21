@@ -8,16 +8,6 @@ MODEL_PATH = os.path.join(
     "url_model.pkl"
 )
 
-
-SAFE_DOMAINS = {
-    "google.com", "youtube.com", "facebook.com",
-    "wikipedia.org", "twitter.com", "instagram.com",
-    "linkedin.com", "github.com", "microsoft.com",
-    "apple.com", "amazon.com", "netflix.com",
-    "reddit.com", "stackoverflow.com", "gmail.com"
-}
-
-
 DOMAIN_MEMORY = {}
 
 
@@ -71,11 +61,6 @@ def predict_url(extracted_features: dict) -> tuple:
 
 def predict_url_full(url: str, extracted_features: dict) -> tuple:
     domain = get_domain(url)
-
-
-    for safe in SAFE_DOMAINS:
-        if domain == safe or domain.endswith("." + safe):
-            return "Safe", 0.99, ["Whitelisted domain"]
 
 
     if domain in DOMAIN_MEMORY:
