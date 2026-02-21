@@ -1,9 +1,9 @@
 import argparse
 import json
 
-from feature_extractor import extract_features
-from ml_model import predict_url_full
-from virustotal import check_virustotal
+from backend.core import feature_extractor
+from backend.core import ml_model 
+from backend.core import virustotal
 
 
 def analyze_url(url: str) -> dict:
@@ -14,10 +14,10 @@ def analyze_url(url: str) -> dict:
     """
 
     
-    features = extract_features(url)
+    features = feature_extractor.extract_features(url)
 
     
-    prediction, confidence, reasons = predict_url_full(url, features)
+    prediction, confidence, reasons = ml_model.predict_url_full(url, features)
 
     
 
@@ -36,7 +36,7 @@ def analyze_url(url: str) -> dict:
 
     
 
-    vt_result = check_virustotal(url)
+    vt_result = virustotal.check_virustotal(url)
 
     # If VirusTotal fails : fallback to ML
     if not vt_result or "error" in vt_result:
