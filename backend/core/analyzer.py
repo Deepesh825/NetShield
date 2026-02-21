@@ -1,9 +1,9 @@
 import argparse
 import json
 
-from backend.core.feature_extractor import extract_features
-from backend.core.ml_model import predict_url_full
-from backend.core.virustotal import check_virustotal
+from feature_extractor import extract_features
+from ml_model import predict_url_full
+from virustotal import check_virustotal
 
 
 def analyze_url(url: str) -> dict:

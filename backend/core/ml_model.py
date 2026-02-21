@@ -43,7 +43,7 @@ def predict_url(extracted_features: dict) -> tuple:
     if rf_model is None:
         return "Error", 0.0
 
-    from backend.core.feature_extractor import FEATURE_ORDER
+    from feature_extractor import FEATURE_ORDER
 
     feature_values = [extracted_features[key] for key in FEATURE_ORDER]
     X_input = np.array(feature_values).reshape(1, -1)
