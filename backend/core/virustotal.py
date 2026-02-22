@@ -3,7 +3,6 @@ import requests
 import base64
 from dotenv import load_dotenv
 
-# Load environment variables from your .env file
 load_dotenv()
 
 def check_virustotal(url: str) -> dict:
