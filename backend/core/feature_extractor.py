@@ -31,7 +31,32 @@ def calculate_entropy(string: str) -> float:
 
     return round(entropy, 4)
 
+def count_unusual_bigrams(domain: str) -> int:
+    """
+    Counts highly unusual letter transitions (bigrams) that indicate keyboard mashing (DGAs).
+    """
+    # A sample of rare transitions in standard English/legit domains
+    unusual_pairs = ['qx', 'xz', 'wq', 'jw', 'vk', 'zf', 'bx', 'vq', 'zx', 'gx', 'jc', 'qz', 'xj', 'kq']
+    return sum(1 for pair in unusual_pairs if pair in domain)
+    
+def digit_to_letter_ratio(string: str) -> float:
+    """DGAs often mix numbers and letters randomly (e.g., ab12cdef345)"""
+    letters = sum(1 for c in string if c.isalpha())
+    digits = sum(1 for c in string if c.isdigit())
+    if letters == 0:
+        return float(digits)
+    return round(digits / letters, 4)
 
+def unique_char_density(string: str) -> float:
+    """
+    Gibberish often uses a wide spread of the keyboard. 
+    'google' = 4 unique chars in 6 letters (0.66). 
+    'dfigbdf' = 5 unique chars in 7 letters (0.71).
+    """
+    if not string:
+        return 0.0
+    unique_chars = len(set(string))
+    return round(unique_chars / len(string), 4)
 
 FEATURE_ORDER = [
     # Length features
@@ -71,6 +96,12 @@ FEATURE_ORDER = [
     "deep_subdomain",
     "long_domain_flag",
     "trusted_tld",
+    
+    # NEW DGA FEATURES
+    "unusual_bigrams",
+    "digit_letter_ratio",
+    "unique_char_density"
+    
 ]
 
 
@@ -152,6 +183,12 @@ def extract_features(url: str) -> dict:
             "many_hyphens": 1 if domain.count("-") >= 2 else 0,
             "deep_subdomain": 1 if max(len(domain.split(".")) - 2, 0) >= 2 else 0,
             "long_domain_flag": 1 if len(domain) > 25 else 0,
+            
+            # NEW DGA FEATURES (Targeting just the name part before the TLD)
+            "unusual_bigrams": count_unusual_bigrams(domain.split('.')[0]),
+            "digit_letter_ratio": digit_to_letter_ratio(domain.split('.')[0]),
+            "unique_char_density": unique_char_density(domain.split('.')[0])
+            
         }
 
         return features
