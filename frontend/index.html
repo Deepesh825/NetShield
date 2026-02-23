@@ -1,102 +1,109 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NetShield — Is this link safe?</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>NetShield — URL Safety Intelligence</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Young+Serif&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;900&family=Space+Mono:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <style>
-      /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   NETSHIELD — CONSUMER FRIENDLY EDITION
-   Fonts: Nunito (rounded, friendly) · Young Serif (verdict drama)
-   Vibe: Clean consumer app — like Google or Notion
-   NOT a dashboard. NOT a hacker terminal.
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-
-      /* ── LIGHT ── */
-      [data-theme="light"] {
-        --bg: #fafaf8;
-        --bg2: #f2f1ec;
-        --card: #ffffff;
-        --card2: #fafaf8;
-        --stroke: #e8e5dc;
-        --stroke2: #d4d0c4;
-        --ink: #1a1814;
-        --ink2: #4a453a;
-        --ink3: #8c8578;
-        --ink4: #c4bfb4;
-        --ph: #9e9880; /* placeholder — warm, clearly visible */
-        --brand: #e85d3a;
-        --brand2: #c94a28;
-        --brand-soft: #fef1ee;
-        --brand-ring: rgba(232, 93, 58, 0.18);
-        --safe: #16a34a;
-        --safe-bg: #f0fdf4;
-        --safe-stroke: #bbf7d0;
-        --safe-pill: #dcfce7;
-        --mal: #dc2626;
-        --mal-bg: #fff5f5;
-        --mal-stroke: #fecaca;
-        --mal-pill: #fee2e2;
-        --warn: #d97706;
-        --warn-bg: #fffbeb;
-        --shadow1:
-          0 1px 3px rgba(0, 0, 0, 0.06), 0 4px 16px rgba(0, 0, 0, 0.06);
-        --shadow2:
-          0 2px 8px rgba(0, 0, 0, 0.08), 0 16px 48px rgba(0, 0, 0, 0.08);
-        --shadow3:
-          0 4px 16px rgba(232, 93, 58, 0.15), 0 24px 64px rgba(0, 0, 0, 0.1);
-        --inp: #ffffff;
-        --inp-stroke: #d4d0c4;
-        --scroll: #d4d0c4;
-      }
-
-      /* ── DARK ── */
       [data-theme="dark"] {
-        --bg: #131210;
-        --bg2: #1c1a17;
-        --card: #1f1d1a;
-        --card2: #252320;
+        --bg: #07080f;
+        --bg2: #0d0f1c;
+        --bg3: #12152a;
+        --card: #0d0f1c;
+        --card2: #101220;
+        --surface: rgba(255, 255, 255, 0.04);
+        --surface2: rgba(255, 255, 255, 0.07);
+        --border: rgba(255, 255, 255, 0.08);
+        --border2: rgba(255, 255, 255, 0.13);
         --stroke: rgba(255, 255, 255, 0.08);
         --stroke2: rgba(255, 255, 255, 0.14);
-        --ink: #f5f2eb;
-        --ink2: #c4bfb0;
-        --ink3: #7a7468;
-        --ink4: #4a453c;
-        --ph: #8a8278; /* placeholder — clearly visible in dark */
-        --brand: #ff7152;
-        --brand2: #e85d3a;
-        --brand-soft: rgba(232, 93, 58, 0.12);
-        --brand-ring: rgba(255, 113, 82, 0.2);
-        --safe: #4ade80;
-        --safe-bg: rgba(74, 222, 128, 0.1);
-        --safe-stroke: rgba(74, 222, 128, 0.3);
-        --safe-pill: rgba(74, 222, 128, 0.15);
-        --mal: #f87171;
-        --mal-bg: rgba(248, 113, 113, 0.1);
-        --mal-stroke: rgba(248, 113, 113, 0.3);
-        --mal-pill: rgba(248, 113, 113, 0.15);
-        --warn: #fbbf24;
-        --warn-bg: rgba(251, 191, 36, 0.1);
-        --shadow1: 0 1px 3px rgba(0, 0, 0, 0.3), 0 4px 16px rgba(0, 0, 0, 0.25);
-        --shadow2:
-          0 2px 8px rgba(0, 0, 0, 0.35), 0 16px 48px rgba(0, 0, 0, 0.3);
-        --shadow3:
-          0 4px 16px rgba(255, 113, 82, 0.12), 0 24px 64px rgba(0, 0, 0, 0.4);
-        --inp: rgba(255, 255, 255, 0.06);
+        --ink: #ffffff;
+        --ink2: rgba(255, 255, 255, 0.75);
+        --ink3: rgba(255, 255, 255, 0.42);
+        --ink4: rgba(255, 255, 255, 0.18);
+        --ph: rgba(255, 255, 255, 0.38);
+        --v: #7c3aed;
+        --v2: #a855f7;
+        --v3: #c084fc;
+        --pink: #ec4899;
+        --cyan: #06b6d4;
+        --gold: #f59e0b;
+        --safe: #10b981;
+        --safe-bg: rgba(16, 185, 129, 0.12);
+        --safe-bd: rgba(16, 185, 129, 0.28);
+        --safe-pill: rgba(16, 185, 129, 0.18);
+        --safe-stroke: rgba(16, 185, 129, 0.35);
+        --danger: #f43f5e;
+        --danger-bg: rgba(244, 63, 94, 0.12);
+        --danger-bd: rgba(244, 63, 94, 0.28);
+        --mal-pill: rgba(244, 63, 94, 0.18);
+        --mal-stroke: rgba(244, 63, 94, 0.35);
+        --warn: #f59e0b;
+        --warn-bg: rgba(245, 158, 11, 0.12);
+        --inp: rgba(0, 0, 0, 0.35);
+        --inp-focus: rgba(0, 0, 0, 0.5);
         --inp-stroke: rgba(255, 255, 255, 0.14);
-        --scroll: rgba(255, 255, 255, 0.15);
+        --shadow1:
+          0 2px 12px rgba(0, 0, 0, 0.35), 0 8px 32px rgba(0, 0, 0, 0.25);
+        --shadow2:
+          0 4px 24px rgba(0, 0, 0, 0.45), 0 16px 56px rgba(0, 0, 0, 0.3);
+        --brand-ring: rgba(168, 85, 247, 0.22);
+        --scroll: rgba(168, 85, 247, 0.4);
       }
-
-      /* ── RESET ── */
+      [data-theme="light"] {
+        --bg: #f0efff;
+        --bg2: #e8e6ff;
+        --bg3: #ddd9ff;
+        --card: #ffffff;
+        --card2: #f8f7ff;
+        --surface: rgba(255, 255, 255, 0.75);
+        --surface2: rgba(255, 255, 255, 0.92);
+        --border: rgba(100, 80, 200, 0.12);
+        --border2: rgba(100, 80, 200, 0.22);
+        --stroke: rgba(100, 80, 200, 0.12);
+        --stroke2: rgba(100, 80, 200, 0.22);
+        --ink: #1a0e40;
+        --ink2: rgba(26, 14, 64, 0.72);
+        --ink3: rgba(26, 14, 64, 0.45);
+        --ink4: rgba(26, 14, 64, 0.18);
+        --ph: rgba(26, 14, 64, 0.38);
+        --v: #6d28d9;
+        --v2: #7c3aed;
+        --v3: #8b5cf6;
+        --pink: #db2777;
+        --cyan: #0284c7;
+        --gold: #d97706;
+        --safe: #059669;
+        --safe-bg: rgba(5, 150, 105, 0.08);
+        --safe-bd: rgba(5, 150, 105, 0.28);
+        --safe-pill: rgba(5, 150, 105, 0.12);
+        --safe-stroke: rgba(5, 150, 105, 0.3);
+        --danger: #dc2626;
+        --danger-bg: rgba(220, 38, 38, 0.07);
+        --danger-bd: rgba(220, 38, 38, 0.25);
+        --mal-pill: rgba(220, 38, 38, 0.1);
+        --mal-stroke: rgba(220, 38, 38, 0.28);
+        --warn: #d97706;
+        --warn-bg: rgba(217, 119, 6, 0.1);
+        --inp: rgba(255, 255, 255, 0.9);
+        --inp-focus: #ffffff;
+        --inp-stroke: rgba(100, 80, 200, 0.22);
+        --shadow1:
+          0 1px 4px rgba(100, 80, 200, 0.08),
+          0 4px 16px rgba(100, 80, 200, 0.08);
+        --shadow2:
+          0 2px 12px rgba(100, 80, 200, 0.12),
+          0 16px 48px rgba(100, 80, 200, 0.1);
+        --brand-ring: rgba(109, 40, 217, 0.18);
+        --scroll: rgba(124, 58, 237, 0.35);
+      }
       *,
-      *::before,
-      *::after {
+      ::after,
+      ::before {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
@@ -105,82 +112,136 @@
         scroll-behavior: smooth;
       }
       body {
-        font-family: "Nunito", sans-serif;
         background: var(--bg);
         color: var(--ink);
+        font-family: Outfit, sans-serif;
         min-height: 100vh;
-        line-height: 1.6;
+        overflow-x: hidden;
         -webkit-font-smoothing: antialiased;
         transition:
-          background 0.3s,
-          color 0.3s;
-        overflow-x: hidden;
+          background 0.35s,
+          color 0.35s;
+      }
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background:
+          radial-gradient(
+            ellipse 700px 500px at -5% 0,
+            rgba(124, 58, 237, 0.14) 0,
+            transparent 65%
+          ),
+          radial-gradient(
+            ellipse 500px 600px at 105% 85%,
+            rgba(236, 72, 153, 0.1) 0,
+            transparent 65%
+          ),
+          radial-gradient(
+            ellipse 400px 350px at 60% 30%,
+            rgba(6, 182, 212, 0.07) 0,
+            transparent 60%
+          );
+        pointer-events: none;
+        z-index: 0;
+        transition: opacity 0.4s;
+      }
+      [data-theme="light"] body::before {
+        background:
+          radial-gradient(
+            ellipse 700px 500px at -5% 0,
+            rgba(109, 40, 217, 0.08) 0,
+            transparent 65%
+          ),
+          radial-gradient(
+            ellipse 500px 600px at 105% 85%,
+            rgba(219, 39, 119, 0.06) 0,
+            transparent 65%
+          ),
+          radial-gradient(
+            ellipse 400px 350px at 60% 30%,
+            rgba(2, 132, 199, 0.05) 0,
+            transparent 60%
+          );
       }
       ::-webkit-scrollbar {
-        width: 5px;
+        width: 4px;
       }
       ::-webkit-scrollbar-track {
-        background: transparent;
+        background: 0 0;
       }
       ::-webkit-scrollbar-thumb {
         background: var(--scroll);
         border-radius: 3px;
       }
-
-      /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   LAYOUT
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-      .wrap {
-        max-width: 580px;
+      .page {
+        position: relative;
+        z-index: 10;
+        max-width: 660px;
         margin: 0 auto;
         padding: 0 1.25rem 6rem;
       }
-
-      /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   NAV
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
       .nav {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 1.5rem 0 0;
+        padding: 1.6rem 0 0;
+        margin-bottom: 0.25rem;
       }
-
       .logo {
         display: flex;
         align-items: center;
-        gap: 0.55rem;
+        gap: 0.7rem;
       }
-      .logo-icon {
-        width: 36px;
-        height: 36px;
-        border-radius: 11px;
-        background: var(--brand);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.05rem;
-        box-shadow: 0 3px 12px var(--brand-ring);
+      .logo-mark {
+        position: relative;
+        width: 46px;
+        height: 46px;
+        flex-shrink: 0;
+        filter: drop-shadow(0 4px 16px rgba(124, 58, 237, 0.5))
+          drop-shadow(0 0 8px rgba(236, 72, 153, 0.3));
         transition:
-          transform 0.2s,
-          box-shadow 0.2s;
+          filter 0.3s,
+          transform 0.3s;
       }
-      .logo-icon:hover {
-        transform: scale(1.06);
+      .logo-mark:hover {
+        transform: scale(1.08) rotate(-3deg);
+        filter: drop-shadow(0 6px 20px rgba(124, 58, 237, 0.7))
+          drop-shadow(0 0 12px rgba(236, 72, 153, 0.4));
       }
-      .logo-text {
-        font-size: 1.1rem;
-        font-weight: 800;
-        color: var(--ink);
-        letter-spacing: -0.3px;
+      [data-theme="light"] .logo-mark {
+        filter: drop-shadow(0 3px 10px rgba(109, 40, 217, 0.4));
+      }
+      .logo-text-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+      .logo-name {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 1.45rem;
+        letter-spacing: 3px;
+        background: linear-gradient(90deg, var(--v2), var(--pink), var(--cyan));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        line-height: 1;
+      }
+      .logo-tagline {
+        font-family: "Space Mono", monospace;
+        font-size: 0.5rem;
+        letter-spacing: 2.5px;
+        color: var(--ink3);
+        text-transform: uppercase;
+        margin-top: 1px;
         transition: color 0.3s;
       }
-
-      /* Theme pill */
       .theme-pill {
         display: flex;
-        background: var(--card);
-        border: 1.5px solid var(--stroke);
+        background: var(--surface);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1.5px solid var(--border2);
         border-radius: 99px;
         padding: 3px;
         gap: 2px;
@@ -190,13 +251,12 @@
           border-color 0.3s;
       }
       .tp-btn {
-        width: 32px;
-        height: 28px;
+        width: 34px;
+        height: 30px;
         border: none;
         border-radius: 99px;
-        background: transparent;
+        background: 0 0;
         color: var(--ink3);
-        font-size: 0.82rem;
         cursor: pointer;
         display: flex;
         align-items: center;
@@ -205,40 +265,34 @@
       }
       .tp-btn:hover {
         color: var(--ink2);
-        background: var(--bg2);
+        background: var(--surface2);
       }
       .tp-btn.on {
-        background: var(--brand);
+        background: linear-gradient(135deg, var(--v), var(--pink));
         color: #fff;
-        box-shadow: 0 2px 8px var(--brand-ring);
+        box-shadow: 0 2px 10px rgba(124, 58, 237, 0.4);
       }
-
-      /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   HERO
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
       .hero {
         text-align: center;
-        padding: 2.5rem 0 2.25rem;
+        padding: 2.25rem 0 2rem;
       }
-
-      /* Floating emoji characters around the title — purely decorative */
       .hero-floaters {
         font-size: 2rem;
-        margin-bottom: 0.75rem;
+        margin-bottom: 0.85rem;
         display: flex;
         justify-content: center;
-        gap: 0.6rem;
+        gap: 0.7rem;
         animation: floater-in 0.6s ease both;
       }
       .hero-floaters span {
         display: inline-block;
-        animation: gentle-float 3s ease-in-out infinite;
+        animation: gentle-float 3.2s ease-in-out infinite;
       }
       .hero-floaters span:nth-child(2) {
         animation-delay: 0.4s;
       }
       .hero-floaters span:nth-child(3) {
-        animation-delay: 0.8s;
+        animation-delay: 0.85s;
       }
       @keyframes gentle-float {
         0%,
@@ -246,105 +300,170 @@
           transform: translateY(0);
         }
         50% {
-          transform: translateY(-5px);
+          transform: translateY(-6px);
         }
       }
       @keyframes floater-in {
         from {
           opacity: 0;
-          transform: scale(0.7);
+          transform: scale(0.6);
         }
         to {
           opacity: 1;
           transform: scale(1);
         }
       }
-
-      .hero-h1 {
-        font-family: "Young Serif", serif;
-        font-size: clamp(2.1rem, 6.5vw, 3.2rem);
-        font-weight: 400;
-        color: var(--ink);
-        line-height: 1.2;
-        letter-spacing: -0.5px;
-        margin-bottom: 0.75rem;
-        transition: color 0.3s;
+      .hero-eyebrow {
+        font-family: "Space Mono", monospace;
+        font-size: 0.65rem;
+        letter-spacing: 4px;
+        color: var(--cyan);
+        text-transform: uppercase;
+        margin-bottom: 0.6rem;
+        opacity: 0.8;
       }
-      .hero-h1 strong {
-        color: var(--brand);
-        font-weight: 400;
+      .hero-title {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: clamp(3.8rem, 13vw, 7rem);
+        line-height: 0.92;
+        letter-spacing: 2px;
+        background: linear-gradient(
+          135deg,
+          var(--ink) 0,
+          var(--v3) 35%,
+          var(--pink) 65%,
+          var(--gold) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: titleShimmer 4s ease-in-out infinite;
+        background-size: 200% 200%;
       }
-      .hero-p {
+      [data-theme="light"] .hero-title {
+        background: linear-gradient(
+          135deg,
+          #1a0e40 0,
+          var(--v2) 35%,
+          var(--pink) 65%,
+          var(--gold) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        background-size: 200% 200%;
+      }
+      @keyframes titleShimmer {
+        0%,
+        100% {
+          background-position: 0 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+      }
+      .hero-sub {
         font-size: 1.05rem;
-        font-weight: 500;
         color: var(--ink3);
-        max-width: 420px;
-        margin: 0 auto;
+        margin-top: 0.85rem;
+        font-weight: 400;
+        letter-spacing: 0.2px;
+        max-width: 440px;
+        margin-left: auto;
+        margin-right: auto;
         line-height: 1.65;
         transition: color 0.3s;
       }
-
-      /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   MAIN SEARCH CARD
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-      .search-card {
-        background: var(--card);
-        border-radius: 24px;
-        border: 1.5px solid var(--stroke);
-        box-shadow: var(--shadow2);
-        padding: 1.75rem 1.75rem 1.5rem;
-        margin-bottom: 1rem;
-        transition:
-          background 0.3s,
-          border-color 0.3s,
-          box-shadow 0.3s;
+      .hero-sub strong {
+        color: var(--v3);
+        font-weight: 700;
       }
-
-      .search-card-heading {
+      [data-theme="light"] .hero-sub strong {
+        color: var(--v2);
+      }
+      .glass {
+        background: var(--surface);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid var(--border);
+        border-radius: 24px;
+        box-shadow: var(--shadow1);
+        transition:
+          background 0.35s,
+          border-color 0.35s,
+          box-shadow 0.35s;
+      }
+      .scan-card {
+        padding: 1.75rem;
+        margin-bottom: 1rem;
+        position: relative;
+        overflow: hidden;
+      }
+      .scan-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--v2),
+          var(--pink),
+          var(--cyan),
+          transparent
+        );
+        animation: topline 3s ease-in-out infinite;
+      }
+      @keyframes topline {
+        0%,
+        100% {
+          opacity: 0.4;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+      .scan-label {
         font-size: 0.9rem;
         font-weight: 700;
         color: var(--ink2);
         margin-bottom: 1rem;
         display: flex;
         align-items: center;
-        gap: 0.4rem;
+        gap: 0.5rem;
         transition: color 0.3s;
       }
-      .search-card-heading::before {
+      .scan-label::before {
         content: "";
         display: inline-block;
         width: 4px;
         height: 18px;
         border-radius: 2px;
-        background: var(--brand);
+        background: linear-gradient(180deg, var(--v2), var(--pink));
+        flex-shrink: 0;
       }
-
-      /* Input group */
-      .input-group {
-        display: flex;
-        flex-direction: column;
-        gap: 0.65rem;
-        margin-bottom: 1.1rem;
-      }
-
-      /* The URL input */
       .url-box {
         display: flex;
         align-items: center;
         background: var(--inp);
         border: 2px solid var(--inp-stroke);
         border-radius: 14px;
-        padding: 0 1rem;
-        gap: 0.6rem;
+        padding: 0 1.1rem;
+        gap: 0.65rem;
+        margin-bottom: 0.75rem;
         transition:
           border-color 0.25s,
           box-shadow 0.25s,
           background 0.3s;
       }
       .url-box:focus-within {
-        border-color: var(--brand);
-        box-shadow: 0 0 0 4px var(--brand-ring);
-        background: var(--card);
+        border-color: var(--v2);
+        box-shadow:
+          0 0 0 4px rgba(168, 85, 247, 0.18),
+          0 0 30px rgba(168, 85, 247, 0.1);
+        background: var(--inp-focus);
       }
       .url-box-icon {
         color: var(--ph);
@@ -353,115 +472,108 @@
         transition: color 0.25s;
       }
       .url-box:focus-within .url-box-icon {
-        color: var(--brand);
+        color: var(--v2);
       }
       .url-input {
         flex: 1;
-        background: transparent;
+        background: 0 0;
         border: none;
-        outline: none;
-        font-family: "Nunito", sans-serif;
+        outline: 0;
+        font-family: Outfit, sans-serif;
         font-size: 1rem;
         font-weight: 500;
         color: var(--ink);
         padding: 1rem 0;
-        /* Placeholder must be bold and clearly readable */
       }
       .url-input::placeholder {
         color: var(--ph);
         font-weight: 500;
         opacity: 1;
       }
-
-      /* Big orange CTA button */
-      .check-btn {
+      .scan-btn {
         width: 100%;
-        background: var(--brand);
-        color: #fff;
+        background: linear-gradient(135deg, var(--v), var(--pink));
         border: none;
         border-radius: 14px;
         padding: 1rem 1.5rem;
-        font-family: "Nunito", sans-serif;
-        font-size: 1.05rem;
-        font-weight: 800;
-        letter-spacing: 0.1px;
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 1.35rem;
+        letter-spacing: 3px;
+        color: #fff;
         cursor: pointer;
         position: relative;
         overflow: hidden;
-        transition: all 0.2s ease;
-        box-shadow: 0 4px 16px var(--brand-ring);
+        transition: all 0.25s;
+        box-shadow: 0 4px 20px rgba(124, 58, 237, 0.4);
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 0.5rem;
       }
-      .check-btn:hover:not(:disabled) {
-        background: var(--brand2);
-        transform: translateY(-1px);
-        box-shadow: 0 7px 24px var(--brand-ring);
+      .scan-btn:hover:not(:disabled) {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 32px rgba(124, 58, 237, 0.55);
       }
-      .check-btn:active:not(:disabled) {
+      .scan-btn:active:not(:disabled) {
         transform: scale(0.98);
       }
-      .check-btn:disabled {
-        opacity: 0.5;
+      .scan-btn:disabled {
+        opacity: 0.45;
         cursor: not-allowed;
         transform: none !important;
         box-shadow: none;
       }
-      /* Ripple */
-      .rpl {
+      .ripple {
         position: absolute;
         border-radius: 50%;
-        background: rgba(255, 255, 255, 0.3);
+        background: rgba(255, 255, 255, 0.28);
         transform: scale(0);
-        animation: rpl-go 0.55s linear;
+        animation: rp 0.55s linear;
         pointer-events: none;
       }
-      @keyframes rpl-go {
+      @keyframes rp {
         to {
           transform: scale(4);
           opacity: 0;
         }
       }
-
-      /* Examples */
       .examples {
         display: flex;
         align-items: center;
-        gap: 0.45rem;
+        gap: 0.5rem;
         flex-wrap: wrap;
+        margin-top: 1.1rem;
       }
       .ex-label {
-        font-size: 0.78rem;
+        font-size: 0.75rem;
         font-weight: 600;
         color: var(--ink3);
         flex-shrink: 0;
+        font-family: "Space Mono", monospace;
         transition: color 0.3s;
       }
       .ex-chip {
-        font-size: 0.78rem;
-        font-weight: 600;
-        color: var(--brand);
-        background: var(--brand-soft);
-        border: 1.5px solid transparent;
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: var(--v3);
+        background: rgba(168, 85, 247, 0.12);
+        border: 1.5px solid rgba(168, 85, 247, 0.25);
         border-radius: 99px;
-        padding: 0.22em 0.8em;
+        padding: 0.25em 0.85em;
         cursor: pointer;
-        transition: all 0.2s ease;
-      }
-      [data-theme="dark"] .ex-chip {
-        background: var(--brand-soft);
-        color: var(--brand);
+        transition: all 0.2s;
       }
       .ex-chip:hover {
-        background: var(--brand);
+        background: var(--v2);
         color: #fff;
+        border-color: var(--v2);
+        transform: translateY(-1px);
       }
-
-      /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   LOADING / CHECKING CARD
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+      [data-theme="light"] .ex-chip {
+        color: var(--v2);
+        background: rgba(124, 58, 237, 0.08);
+        border-color: rgba(124, 58, 237, 0.22);
+      }
       .loading-card {
         background: var(--card);
         border-radius: 24px;
@@ -477,7 +589,6 @@
       .loading-card.on {
         display: block;
       }
-
       .loading-top {
         display: flex;
         align-items: center;
@@ -485,40 +596,43 @@
         margin-bottom: 1.25rem;
       }
       .loading-spinner {
-        width: 42px;
-        height: 42px;
+        width: 44px;
+        height: 44px;
         flex-shrink: 0;
-        border: 3px solid var(--bg2);
-        border-top-color: var(--brand);
+        border: 3px solid var(--border);
+        border-top-color: var(--v2);
+        border-right-color: var(--pink);
         border-radius: 50%;
-        animation: sp 0.75s linear infinite;
+        animation: sp 0.7s linear infinite;
       }
       @keyframes sp {
         to {
           transform: rotate(360deg);
         }
       }
-      .loading-title {
-        font-size: 1rem;
-        font-weight: 800;
-        color: var(--ink);
-        transition: color 0.3s;
+      .loading-info-title {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 1.4rem;
+        letter-spacing: 2px;
+        background: linear-gradient(90deg, var(--v2), var(--pink));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
       }
       .loading-url {
-        font-size: 0.82rem;
+        font-size: 0.8rem;
         font-weight: 500;
         color: var(--ink3);
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        max-width: 320px;
+        max-width: 340px;
         margin-top: 0.15rem;
         transition: color 0.3s;
       }
-      /* Progress */
       .prog-track {
-        height: 6px;
-        background: var(--bg2);
+        height: 5px;
+        background: var(--border);
         border-radius: 99px;
         overflow: hidden;
         margin-bottom: 1.25rem;
@@ -527,15 +641,14 @@
       .prog-fill {
         height: 100%;
         width: 0%;
-        background: linear-gradient(90deg, var(--brand), #ff9170);
+        background: linear-gradient(90deg, var(--v), var(--pink), var(--cyan));
         border-radius: 99px;
         transition: width 0.5s ease;
       }
-      /* Step list */
       .step-list {
         display: flex;
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 0.45rem;
       }
       .step-row {
         display: flex;
@@ -546,16 +659,18 @@
         transition: all 0.3s;
       }
       .step-row.idle {
-        opacity: 0.4;
+        opacity: 0.35;
       }
       .step-row.running {
-        background: var(--brand-soft);
+        background: rgba(168, 85, 247, 0.1);
+        border: 1px solid rgba(168, 85, 247, 0.15);
       }
-      [data-theme="dark"] .step-row.running {
-        background: var(--brand-soft);
+      [data-theme="light"] .step-row.running {
+        background: rgba(124, 58, 237, 0.07);
+        border-color: rgba(124, 58, 237, 0.15);
       }
       .step-row.done {
-        opacity: 0.6;
+        opacity: 0.55;
       }
       .step-icon-wrap {
         width: 30px;
@@ -565,15 +680,15 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background: var(--card2);
-        border: 1.5px solid var(--stroke);
+        background: var(--surface);
+        border: 1.5px solid var(--border2);
         font-size: 0.85rem;
         transition: all 0.3s;
       }
       .step-row.running .step-icon-wrap {
-        background: var(--brand);
-        border-color: var(--brand);
-        box-shadow: 0 2px 8px var(--brand-ring);
+        background: linear-gradient(135deg, var(--v), var(--pink));
+        border-color: transparent;
+        box-shadow: 0 2px 10px rgba(124, 58, 237, 0.35);
       }
       .step-row.done .step-icon-wrap {
         background: var(--safe-pill);
@@ -581,18 +696,14 @@
         color: var(--safe);
       }
       .step-text {
-        font-size: 0.88rem;
+        font-size: 0.85rem;
         font-weight: 600;
-        color: var(--ink2);
+        color: var(--ink3);
         transition: color 0.3s;
       }
       .step-row.running .step-text {
         color: var(--ink);
       }
-
-      /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   RESULT SECTION
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
       #result {
         display: none;
       }
@@ -613,20 +724,23 @@
       #result > * {
         animation: child-in 0.4s cubic-bezier(0.4, 0, 0.2, 1) both;
       }
-      #result > *:nth-child(1) {
-        animation-delay: 0.04s;
+      #result > :first-child {
+        animation-delay: 40ms;
       }
-      #result > *:nth-child(2) {
+      #result > :nth-child(2) {
         animation-delay: 0.1s;
       }
-      #result > *:nth-child(3) {
+      #result > :nth-child(3) {
         animation-delay: 0.16s;
       }
-      #result > *:nth-child(4) {
+      #result > :nth-child(4) {
         animation-delay: 0.22s;
       }
-      #result > *:nth-child(5) {
+      #result > :nth-child(5) {
         animation-delay: 0.28s;
+      }
+      #result > :nth-child(6) {
+        animation-delay: 0.34s;
       }
       @keyframes child-in {
         from {
@@ -638,26 +752,23 @@
           transform: translateY(0);
         }
       }
-
-      /* ── BIG VERDICT ── */
-      .verdict {
+      .verdict-banner {
         border-radius: 24px;
-        padding: 2rem 1.75rem;
+        padding: 2.25rem 2rem;
         margin-bottom: 1rem;
         position: relative;
         overflow: hidden;
         border: 2px solid;
         transition: all 0.4s;
       }
-      .verdict.safe {
+      .verdict-banner.safe {
         background: var(--safe-bg);
-        border-color: var(--safe-stroke);
+        border-color: var(--safe-bd);
       }
-      .verdict.bad {
-        background: var(--mal-bg);
-        border-color: var(--mal-stroke);
+      .verdict-banner.danger {
+        background: var(--danger-bg);
+        border-color: var(--danger-bd);
       }
-      /* Glow blob */
       .v-blob {
         position: absolute;
         top: -80px;
@@ -667,27 +778,27 @@
         border-radius: 50%;
         filter: blur(80px);
         pointer-events: none;
-        opacity: 0.5;
+        opacity: 0.6;
         animation: blob-sway 4s ease-in-out infinite;
       }
-      .verdict.safe .v-blob {
+      .verdict-banner.safe .v-blob {
         background: radial-gradient(
           circle,
-          rgba(22, 163, 74, 0.4),
+          rgba(16, 185, 129, 0.45),
           transparent
         );
       }
-      .verdict.bad .v-blob {
+      .verdict-banner.danger .v-blob {
         background: radial-gradient(
           circle,
-          rgba(220, 38, 38, 0.4),
+          rgba(244, 63, 94, 0.45),
           transparent
         );
       }
       @keyframes blob-sway {
         0%,
         100% {
-          transform: scale(1) rotate(0deg);
+          transform: scale(1) rotate(0);
         }
         50% {
           transform: scale(1.15) rotate(10deg);
@@ -697,8 +808,6 @@
         position: relative;
         z-index: 2;
       }
-
-      /* Giant emoji */
       .v-emoji {
         font-size: 3.5rem;
         line-height: 1;
@@ -712,18 +821,15 @@
           opacity: 0;
         }
         to {
-          transform: scale(1) rotate(0deg);
+          transform: scale(1) rotate(0);
           opacity: 1;
         }
       }
-
-      /* VERDICT WORD — Young Serif for impact */
       .v-word {
-        font-family: "Young Serif", serif;
-        font-size: clamp(2.5rem, 8vw, 4rem);
-        font-weight: 400;
-        line-height: 1.1;
-        letter-spacing: -0.5px;
+        font-family: "Bebas Neue", sans-serif;
+        font-size: clamp(3rem, 10vw, 5.5rem);
+        letter-spacing: 3px;
+        line-height: 1;
         margin-bottom: 0.5rem;
         animation: word-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
       }
@@ -737,19 +843,21 @@
           transform: scale(1) translateY(0);
         }
       }
-      .verdict.safe .v-word {
+      .verdict-banner.safe .v-word {
         color: var(--safe);
+        text-shadow: 0 0 40px rgba(16, 185, 129, 0.35);
       }
-      .verdict.bad .v-word {
-        color: var(--mal);
+      .verdict-banner.danger .v-word {
+        color: var(--danger);
+        text-shadow: 0 0 40px rgba(244, 63, 94, 0.4);
         animation:
           word-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
-          bad-throb 2.5s ease-in-out 1s infinite;
+          danger-throb 2.5s ease-in-out 1s infinite;
       }
-      @keyframes bad-throb {
+      @keyframes danger-throb {
         0%,
-        82%,
-        100% {
+        100%,
+        82% {
           opacity: 1;
         }
         88%,
@@ -757,8 +865,6 @@
           opacity: 0.75;
         }
       }
-
-      /* Plain English explanation */
       .v-explain {
         font-size: 1rem;
         font-weight: 600;
@@ -766,21 +872,19 @@
         margin-bottom: 1rem;
         transition: color 0.3s;
       }
-      .verdict.safe .v-explain {
+      .verdict-banner.safe .v-explain {
         color: var(--safe);
         opacity: 0.9;
       }
-      .verdict.bad .v-explain {
-        color: var(--mal);
+      .verdict-banner.danger .v-explain {
+        color: var(--danger);
         opacity: 0.9;
       }
-
-      /* Scanned URL pill */
       .v-url-pill {
         display: inline-flex;
         align-items: center;
         gap: 0.45rem;
-        background: rgba(255, 255, 255, 0.6);
+        background: rgba(255, 255, 255, 0.08);
         border-radius: 10px;
         padding: 0.45rem 0.85rem;
         font-size: 0.8rem;
@@ -789,17 +893,12 @@
         word-break: break-all;
         line-height: 1.45;
         max-width: 100%;
+        border: 1px solid var(--border2);
         transition: all 0.3s;
       }
-      [data-theme="dark"] .v-url-pill {
-        background: rgba(255, 255, 255, 0.07);
+      [data-theme="light"] .v-url-pill {
+        background: rgba(255, 255, 255, 0.65);
       }
-      .v-url-icon {
-        font-size: 0.85rem;
-        flex-shrink: 0;
-      }
-
-      /* ── TWO-COL STAT TILES ── */
       .stat-row {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -812,7 +911,7 @@
         border: 1.5px solid var(--stroke);
         padding: 1rem 1.1rem;
         box-shadow: var(--shadow1);
-        transition: all 0.25s ease;
+        transition: all 0.25s;
       }
       .stat-card:hover {
         border-color: var(--stroke2);
@@ -820,37 +919,40 @@
         box-shadow: var(--shadow2);
       }
       .stat-label {
-        font-size: 0.72rem;
+        font-size: 0.65rem;
         font-weight: 700;
         color: var(--ink3);
         text-transform: uppercase;
-        letter-spacing: 0.6px;
-        margin-bottom: 0.32rem;
+        letter-spacing: 1.5px;
+        margin-bottom: 0.35rem;
+        font-family: "Space Mono", monospace;
         transition: color 0.3s;
       }
       .stat-value {
-        font-size: 1rem;
-        font-weight: 800;
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 1.45rem;
+        letter-spacing: 1px;
         color: var(--ink);
-        line-height: 1.2;
+        line-height: 1.1;
         transition: color 0.3s;
       }
-      .stat-value.orange {
-        color: var(--brand);
+      .stat-value.purple {
+        color: var(--v3);
+      }
+      .stat-value.cyan {
+        color: var(--cyan);
       }
       .stat-value.green {
         color: var(--safe);
       }
       .stat-value.red {
-        color: var(--mal);
+        color: var(--danger);
       }
-
-      /* ── CONFIDENCE BREAKDOWN ── */
       .conf-card {
         background: var(--card);
         border-radius: 18px;
         border: 1.5px solid var(--stroke);
-        padding: 1.5rem 1.5rem 1.35rem;
+        padding: 1.5rem;
         box-shadow: var(--shadow1);
         margin-bottom: 1rem;
         transition: all 0.3s;
@@ -861,8 +963,6 @@
         justify-content: space-between;
         margin-bottom: 1.25rem;
       }
-      .conf-left {
-      }
       .conf-title {
         font-size: 0.95rem;
         font-weight: 800;
@@ -870,24 +970,24 @@
         transition: color 0.3s;
       }
       .conf-sub-t {
-        font-size: 0.78rem;
+        font-size: 0.75rem;
         font-weight: 500;
         color: var(--ink3);
         margin-top: 0.15rem;
+        font-family: "Space Mono", monospace;
         transition: color 0.3s;
       }
       .conf-num {
-        font-family: "Young Serif", serif;
-        font-size: 2.4rem;
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 2.6rem;
         line-height: 1;
-        letter-spacing: -0.5px;
+        letter-spacing: 1px;
         transition: color 0.3s;
       }
-
       .bar-list {
         display: flex;
         flex-direction: column;
-        gap: 0.7rem;
+        gap: 0.75rem;
       }
       .bar-item {
         display: flex;
@@ -906,14 +1006,15 @@
         transition: color 0.3s;
       }
       .bar-pct {
-        font-size: 0.78rem;
+        font-size: 0.75rem;
         font-weight: 700;
         color: var(--ink3);
+        font-family: "Space Mono", monospace;
         transition: color 0.3s;
       }
       .bar-track {
-        height: 6px;
-        background: var(--bg2);
+        height: 5px;
+        background: var(--border);
         border-radius: 99px;
         overflow: hidden;
         transition: background 0.3s;
@@ -924,19 +1025,17 @@
         transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
       }
       .fill-a {
-        background: linear-gradient(90deg, #e85d3a, #ff9170);
+        background: linear-gradient(90deg, var(--v), var(--v2));
       }
       .fill-b {
-        background: linear-gradient(90deg, #7c3aed, #a78bfa);
+        background: linear-gradient(90deg, var(--pink), #fb7185);
       }
       .fill-c {
-        background: linear-gradient(90deg, #0891b2, #22d3ee);
+        background: linear-gradient(90deg, var(--cyan), #67e8f9);
       }
       .fill-d {
-        background: linear-gradient(90deg, #16a34a, #4ade80);
+        background: linear-gradient(90deg, var(--gold), #fcd34d);
       }
-
-      /* VT box — when VirusTotal used */
       .vt-card {
         background: var(--card);
         border-radius: 18px;
@@ -944,10 +1043,13 @@
         padding: 1.25rem 1.5rem;
         box-shadow: var(--shadow1);
         margin-bottom: 1rem;
-        display: flex;
+        display: none;
         align-items: center;
         gap: 1rem;
         transition: all 0.3s;
+      }
+      .vt-card.on {
+        display: flex;
       }
       .vt-emoji {
         font-size: 2rem;
@@ -967,8 +1069,6 @@
         line-height: 1.5;
         transition: color 0.3s;
       }
-
-      /* ── RISK SIGNALS ── */
       .signals-card {
         background: var(--card);
         border-radius: 18px;
@@ -982,14 +1082,15 @@
         font-size: 0.95rem;
         font-weight: 800;
         color: var(--ink);
-        margin-bottom: 0.2rem;
+        margin-bottom: 0.18rem;
         transition: color 0.3s;
       }
       .signals-sub {
-        font-size: 0.8rem;
+        font-size: 0.78rem;
         font-weight: 500;
         color: var(--ink3);
-        margin-bottom: 0.9rem;
+        margin-bottom: 0.85rem;
+        font-family: "Space Mono", monospace;
         transition: color 0.3s;
       }
       .signals-chips {
@@ -1001,7 +1102,7 @@
         display: inline-flex;
         align-items: center;
         gap: 0.35rem;
-        font-size: 0.82rem;
+        font-size: 0.78rem;
         font-weight: 700;
         padding: 0.32em 0.9em;
         border-radius: 99px;
@@ -1023,25 +1124,6 @@
           transform: scale(1);
         }
       }
-      .sig-chip.ok {
-        background: var(--safe-pill);
-        color: var(--safe);
-        border-color: var(--safe-stroke);
-      }
-      .sig-chip.warn {
-        background: var(--warn-bg);
-        color: var(--warn);
-        border-color: rgba(217, 119, 6, 0.25);
-      }
-      [data-theme="dark"] .sig-chip.warn {
-        color: var(--warn);
-        border-color: rgba(251, 191, 36, 0.3);
-      }
-      .sig-chip.bad {
-        background: var(--mal-pill);
-        color: var(--mal);
-        border-color: var(--mal-stroke);
-      }
       .sig-chip::before {
         content: "";
         width: 5px;
@@ -1050,8 +1132,21 @@
         background: currentColor;
         flex-shrink: 0;
       }
-
-      /* ── HOW WE CHECKED ── */
+      .sig-chip.ok {
+        background: var(--safe-pill);
+        color: var(--safe);
+        border-color: var(--safe-stroke);
+      }
+      .sig-chip.warn {
+        background: var(--warn-bg);
+        color: var(--warn);
+        border-color: rgba(245, 158, 11, 0.3);
+      }
+      .sig-chip.bad {
+        background: var(--danger-bg);
+        color: var(--danger);
+        border-color: var(--danger-bd);
+      }
       .how-card {
         background: var(--card);
         border-radius: 18px;
@@ -1062,26 +1157,23 @@
         transition: all 0.3s;
       }
       .how-label {
-        font-size: 0.72rem;
+        font-family: "Space Mono", monospace;
+        font-size: 0.62rem;
         font-weight: 700;
         color: var(--ink3);
         text-transform: uppercase;
-        letter-spacing: 0.6px;
-        margin-bottom: 0.45rem;
+        letter-spacing: 2px;
+        margin-bottom: 0.5rem;
         transition: color 0.3s;
       }
       .how-body {
         font-size: 0.88rem;
         font-weight: 500;
         color: var(--ink2);
-        line-height: 1.65;
+        line-height: 1.7;
         transition: color 0.3s;
       }
-
-      /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   HISTORY
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-      .history {
+      .history-card {
         background: var(--card);
         border-radius: 24px;
         border: 1.5px solid var(--stroke);
@@ -1090,7 +1182,7 @@
         margin-top: 1rem;
         transition: all 0.3s;
       }
-      .hist-head {
+      .history-head {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -1099,11 +1191,14 @@
         background: var(--card2);
         transition: all 0.3s;
       }
-      .hist-title {
-        font-size: 0.95rem;
-        font-weight: 800;
-        color: var(--ink);
-        transition: color 0.3s;
+      .history-title {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 1.35rem;
+        letter-spacing: 2px;
+        background: linear-gradient(90deg, var(--v2), var(--pink));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
       }
       .hist-right {
         display: flex;
@@ -1111,45 +1206,48 @@
         gap: 0.65rem;
       }
       .hist-sess {
-        font-size: 0.75rem;
+        font-family: "Space Mono", monospace;
+        font-size: 0.65rem;
         font-weight: 600;
         color: var(--ink3);
         transition: color 0.3s;
       }
       .hist-sess b {
-        color: var(--brand);
+        color: var(--v3);
       }
       .hist-badge {
-        font-size: 0.72rem;
+        font-family: "Space Mono", monospace;
+        font-size: 0.62rem;
         font-weight: 700;
         color: var(--ink3);
-        background: var(--bg2);
-        border: 1.5px solid var(--stroke);
+        background: var(--surface);
+        border: 1.5px solid var(--border2);
         border-radius: 99px;
         padding: 0.18em 0.75em;
         transition: all 0.3s;
       }
-      .hist-cols {
+      .history-thead {
         display: grid;
-        grid-template-columns: 1fr 82px 80px;
+        grid-template-columns: 1fr 88px 84px;
         gap: 0.6rem;
         padding: 0.5rem 1.5rem;
         background: var(--card2);
         border-bottom: 1px solid var(--stroke);
-        font-size: 0.7rem;
+        font-size: 0.62rem;
         font-weight: 700;
-        letter-spacing: 0.4px;
+        letter-spacing: 1.5px;
         text-transform: uppercase;
         color: var(--ink3);
+        font-family: "Space Mono", monospace;
         transition: all 0.3s;
       }
-      .hist-body {
+      .history-body {
         max-height: 230px;
         overflow-y: auto;
       }
       .hist-row {
         display: grid;
-        grid-template-columns: 1fr 82px 80px;
+        grid-template-columns: 1fr 88px 84px;
         gap: 0.6rem;
         padding: 0.78rem 1.5rem;
         align-items: center;
@@ -1181,16 +1279,16 @@
         background: var(--safe);
       }
       .hist-row.hm::before {
-        background: var(--mal);
+        background: var(--danger);
       }
       .hist-row:hover {
-        background: var(--card2);
+        background: var(--surface2);
       }
       .hist-row:last-child {
         border-bottom: none;
       }
       .h-url {
-        font-size: 0.78rem;
+        font-size: 0.76rem;
         font-weight: 600;
         color: var(--ink3);
         overflow: hidden;
@@ -1199,12 +1297,13 @@
         transition: color 0.3s;
       }
       .h-badge {
-        font-size: 0.72rem;
+        font-size: 0.68rem;
         font-weight: 800;
         padding: 0.25em 0.7em;
         border-radius: 99px;
         display: inline-block;
         border: 1.5px solid;
+        text-align: center;
       }
       .hb-s {
         background: var(--safe-pill);
@@ -1213,17 +1312,18 @@
       }
       .hb-m {
         background: var(--mal-pill);
-        color: var(--mal);
+        color: var(--danger);
         border-color: var(--mal-stroke);
       }
       .h-src {
-        font-size: 0.72rem;
+        font-size: 0.68rem;
         font-weight: 600;
         color: var(--ink3);
         text-align: right;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+        font-family: "Space Mono", monospace;
         transition: color 0.3s;
       }
       .hist-empty {
@@ -1239,54 +1339,44 @@
       }
       .hist-empty-text {
         font-size: 0.9rem;
-        font-weight: 700;
+        font-weight: 800;
         margin-bottom: 0.2rem;
+        color: var(--ink3);
       }
       .hist-empty-sub {
-        font-size: 0.8rem;
+        font-size: 0.78rem;
         font-weight: 500;
         opacity: 0.7;
       }
-
-      /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   FOOTER
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
       .footer {
         text-align: center;
         padding: 2.5rem 0 0;
-        font-size: 0.8rem;
+        font-size: 0.78rem;
         font-weight: 500;
         color: var(--ink3);
-        line-height: 1.6;
+        line-height: 1.7;
         transition: color 0.3s;
       }
       .footer strong {
-        color: var(--ink2);
+        color: var(--v3);
         font-weight: 700;
       }
-
-      /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   RESPONSIVE
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-      @media (max-width: 560px) {
-        .wrap {
+      [data-theme="light"] .footer strong {
+        color: var(--v2);
+      }
+      @media (max-width: 580px) {
+        .page {
           padding: 0 1rem 4rem;
         }
-        .hero-h1 {
-          font-size: 2rem;
+        .hero-title {
+          font-size: 3.2rem;
         }
         .stat-row {
           grid-template-columns: 1fr 1fr;
         }
-        .conf-num {
-          font-size: 1.9rem;
-        }
-        .v-word {
-          font-size: 2.5rem;
-        }
-        .hist-cols,
-        .hist-row {
-          grid-template-columns: 1fr 78px;
+        .hist-row,
+        .history-thead {
+          grid-template-columns: 1fr 84px;
         }
         .h-src {
           display: none;
@@ -1294,33 +1384,106 @@
         .examples .ex-chip:last-child {
           display: none;
         }
-      }
-      @media (max-width: 400px) {
-        .hero-h1 {
-          font-size: 1.8rem;
+        .logo-tagline {
+          display: none;
         }
         .v-word {
-          font-size: 2.1rem;
+          font-size: 2.8rem;
+        }
+      }
+      @media (max-width: 400px) {
+        .hero-title {
+          font-size: 2.8rem;
         }
         .stat-row {
           grid-template-columns: 1fr;
+        }
+        .v-word {
+          font-size: 2.3rem;
         }
       }
     </style>
   </head>
   <body>
-    <div class="wrap">
-      <!-- NAV -->
+    <div class="page">
       <nav class="nav">
         <div class="logo">
-          <div class="logo-icon">🛡️</div>
-          <span class="logo-text">NetShield</span>
+          <div class="logo-mark">
+            <svg
+              width="46"
+              height="46"
+              viewBox="0 0 46 46"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs>
+                <linearGradient
+                  id="sg"
+                  x1="4"
+                  y1="2"
+                  x2="42"
+                  y2="44"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0%" stop-color="#7C3AED" />
+                  <stop offset="48%" stop-color="#EC4899" />
+                  <stop offset="100%" stop-color="#06B6D4" />
+                </linearGradient>
+                <linearGradient id="shine" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="rgba(255,255,255,0.38)" />
+                  <stop offset="100%" stop-color="rgba(255,255,255,0)" />
+                </linearGradient>
+                <filter id="glow">
+                  <feGaussianBlur stdDeviation="1.5" result="b" />
+                  <feMerge>
+                    <feMergeNode in="b" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+              </defs>
+
+              <path
+                d="M23 3L5 10.5V22c0 10.2 7.6 19.3 18 21.7C33.4 41.3 41 32.2 41 22V10.5L23 3z"
+                fill="url(#sg)"
+              />
+
+              <path
+                d="M23 3L5 10.5V22c0 10.2 7.6 19.3 18 21.7C33.4 41.3 41 32.2 41 22V10.5L23 3z"
+                fill="url(#shine)"
+                opacity="0.45"
+              />
+
+              <path
+                d="M23 7.5L9 13.5V22c0 7.8 5.8 14.7 14 16.8 8.2-2.1 14-9 14-16.8v-8.5L23 7.5z"
+                fill="none"
+                stroke="rgba(255,255,255,0.22)"
+                stroke-width="1.2"
+              />
+
+              <path
+                d="M16 23l5 5 9-10"
+                stroke="white"
+                stroke-width="2.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                filter="url(#glow)"
+              />
+
+              <path
+                d="M23 3L5 10.5v4c5.5-3.2 11.8-4.8 18-4.8s12.5 1.6 18 4.8v-4L23 3z"
+                fill="rgba(255,255,255,0.18)"
+              />
+            </svg>
+          </div>
+          <div class="logo-text-group">
+            <span class="logo-name">NETSHIELD</span>
+            <span class="logo-tagline">// Threat Intelligence v2</span>
+          </div>
         </div>
 
-        <!-- Light / System / Dark -->
         <div class="theme-pill">
           <button
-            class="tp-btn on"
+            class="tp-btn"
             id="tl"
             onclick="setTheme('light')"
             title="Light mode"
@@ -1386,67 +1549,54 @@
         </div>
       </nav>
 
-      <!-- HERO -->
       <section class="hero">
         <div class="hero-floaters">
-          <span>🔗</span>
-          <span>🛡️</span>
-          <span>✅</span>
+          <span>🔗</span><span>🛡️</span><span>✅</span>
         </div>
-        <h1 class="hero-h1">
-          Before you click that link,<br />
-          let us check if it's <strong>safe</strong>
-        </h1>
-        <p class="hero-p">
-          Paste any link below. We'll check it in seconds and tell you if it's
-          safe or dangerous — in plain English.
+        <div class="hero-eyebrow">// Threat Intelligence Engine</div>
+        <div class="hero-title">NETSHIELD</div>
+        <p class="hero-sub">
+          Before you click that link, let us check if it's
+          <strong>safe</strong>.<br />
+          Drop any URL — we'll tell you the truth in seconds.
         </p>
       </section>
 
-      <!-- MAIN SEARCH CARD -->
-      <div class="search-card">
-        <p class="search-card-heading">Paste your link here</p>
-
+      <div class="glass scan-card">
+        <div class="scan-label">Paste your link here</div>
         <form id="form" novalidate autocomplete="off">
-          <div class="input-group">
-            <!-- URL input box -->
-            <div class="url-box" id="url-box">
-              <svg
-                class="url-box-icon"
-                width="17"
-                height="17"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2.2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path
-                  d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"
-                />
-                <path
-                  d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"
-                />
-              </svg>
-              <input
-                id="url-input"
-                class="url-input"
-                type="text"
-                placeholder="e.g.  https://some-website.com  or  google.com"
-                spellcheck="false"
-                required
+          <div class="url-box" id="url-box">
+            <svg
+              class="url-box-icon"
+              width="17"
+              height="17"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"
               />
-            </div>
-
-            <!-- Big CTA -->
-            <button type="submit" class="check-btn" id="check-btn">
-              <span id="btn-txt">🔍&nbsp;&nbsp;Check This Link</span>
-            </button>
+              <path
+                d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"
+              />
+            </svg>
+            <input
+              id="url-input"
+              class="url-input"
+              type="text"
+              placeholder="e.g.  https://some-site.com  or  google.com"
+              spellcheck="false"
+              required
+            />
           </div>
+          <button type="submit" class="scan-btn" id="check-btn">
+            <span id="btn-txt">🔍&nbsp;&nbsp;SCAN THIS LINK</span>
+          </button>
         </form>
-
-        <!-- Sample links to try -->
         <div class="examples">
           <span class="ex-label">Try:</span>
           <span class="ex-chip" onclick="tryLink('google.com')"
@@ -1461,12 +1611,11 @@
         </div>
       </div>
 
-      <!-- LOADING CARD -->
       <div class="loading-card" id="loading-card">
         <div class="loading-top">
           <div class="loading-spinner"></div>
           <div>
-            <div class="loading-title">Checking your link…</div>
+            <div class="loading-info-title">ANALYZING TARGET</div>
             <div class="loading-url" id="loading-url">—</div>
           </div>
         </div>
@@ -1476,10 +1625,8 @@
         <div class="step-list" id="step-list"></div>
       </div>
 
-      <!-- RESULT -->
       <div id="result">
-        <!-- BIG VERDICT -->
-        <div class="verdict" id="verdict">
+        <div class="verdict-banner" id="verdict-banner">
           <div class="v-blob"></div>
           <div class="v-inner">
             <span class="v-emoji" id="v-emoji">✅</span>
@@ -1488,28 +1635,26 @@
               This link looks safe to open.
             </div>
             <div class="v-url-pill">
-              <span class="v-url-icon">🔗</span>
+              <span>🔗</span>
               <span id="v-url">—</span>
             </div>
           </div>
         </div>
 
-        <!-- STATS ROW -->
         <div class="stat-row">
           <div class="stat-card">
             <div class="stat-label">Confidence</div>
-            <div class="stat-value orange" id="st-conf">—</div>
+            <div class="stat-value purple" id="st-conf">—</div>
           </div>
           <div class="stat-card">
             <div class="stat-label">Checked At</div>
-            <div class="stat-value" id="st-time">—</div>
+            <div class="stat-value cyan" id="st-time">—</div>
           </div>
         </div>
 
-        <!-- CONFIDENCE BREAKDOWN (numeric only) -->
         <div class="conf-card" id="conf-card">
           <div class="conf-head">
-            <div class="conf-left">
+            <div>
               <div class="conf-title">How sure are we?</div>
               <div class="conf-sub-t">4 signals were checked</div>
             </div>
@@ -1555,8 +1700,7 @@
           </div>
         </div>
 
-        <!-- VIRUSTOTAL BOX (shown when confidence is not a number) -->
-        <div class="vt-card" id="vt-card" style="display: none">
+        <div class="vt-card" id="vt-card">
           <div class="vt-emoji">🔬</div>
           <div>
             <div class="vt-title">Verified by VirusTotal</div>
@@ -1566,38 +1710,34 @@
           </div>
         </div>
 
-        <!-- SIGNALS -->
         <div class="signals-card">
           <div class="signals-title">What we found</div>
-          <div class="signals-sub">These things helped us decide:</div>
+          <div class="signals-sub">// Signals that shaped this verdict</div>
           <div class="signals-chips" id="signals"></div>
         </div>
 
-        <!-- HOW WE CHECKED -->
         <div class="how-card">
-          <div class="how-label">How we checked it</div>
+          <div class="how-label">// How we checked it</div>
           <div class="how-body" id="how-body">—</div>
         </div>
       </div>
-      <!-- /result -->
 
-      <!-- HISTORY -->
-      <div class="history">
-        <div class="hist-head">
-          <span class="hist-title">Recent Checks</span>
+      <div class="history-card">
+        <div class="history-head">
+          <span class="history-title">RECENT CHECKS</span>
           <div class="hist-right">
             <span class="hist-sess">Session: <b id="sess">00:00</b></span>
             <span class="hist-badge" id="hist-badge">0 checked</span>
           </div>
         </div>
-        <div class="hist-cols">
+        <div class="history-thead">
           <span>Link</span>
           <span>Result</span>
           <span style="text-align: right">Method</span>
         </div>
-        <div class="hist-body" id="hist-body">
+        <div class="history-body" id="hist-body">
           <div class="hist-empty" id="hist-empty">
-            <div class="hist-empty-icon">🔗</div>
+            <div class="hist-empty-icon">🛰️</div>
             <div class="hist-empty-text">No links checked yet</div>
             <div class="hist-empty-sub">Paste a link above to get started</div>
           </div>
@@ -1609,77 +1749,48 @@
         WHOIS age check · AI model · VirusTotal database
       </div>
     </div>
-    <!-- /wrap -->
 
     <script>
-      /* ═══════════════════════════════════════
-   THEME — Light / System / Dark
-═══════════════════════════════════════ */
-      const TKEY = "ns4-theme";
-      const sysMQ = window.matchMedia("(prefers-color-scheme: dark)");
-
-      function applyTheme(pref) {
-        const resolved =
-          pref === "system" ? (sysMQ.matches ? "dark" : "light") : pref;
-        document.documentElement.setAttribute("data-theme", resolved);
-        ["l", "s", "d"].forEach((k) =>
-          document.getElementById("t" + k)?.classList.remove("on"),
-        );
-        document
-          .getElementById(
-            pref === "light" ? "tl" : pref === "dark" ? "td" : "ts",
-          )
-          ?.classList.add("on");
+      const TKEY = "ns-theme",
+        sysMQ = window.matchMedia("(prefers-color-scheme: dark)");
+      function applyTheme(e) {
+        const t = "system" === e ? (sysMQ.matches ? "dark" : "light") : e;
+        (document.documentElement.setAttribute("data-theme", t),
+          ["l", "s", "d"].forEach((e) =>
+            document.getElementById("t" + e)?.classList.remove("on"),
+          ));
+        const n = "light" === e ? "tl" : "dark" === e ? "td" : "ts";
+        document.getElementById(n)?.classList.add("on");
       }
-      function setTheme(p) {
-        localStorage.setItem(TKEY, p);
-        applyTheme(p);
+      function setTheme(e) {
+        (localStorage.setItem(TKEY, e), applyTheme(e));
       }
-      (function () {
-        applyTheme(localStorage.getItem(TKEY) || "light");
+      function tryLink(e) {
+        const t = document.getElementById("url-input");
+        ((t.value = e), t.focus());
+      }
+      (applyTheme(localStorage.getItem(TKEY) || "dark"),
         sysMQ.addEventListener("change", () => {
-          if ((localStorage.getItem(TKEY) || "system") === "system")
+          "system" === (localStorage.getItem(TKEY) || "dark") &&
             applyTheme("system");
-        });
-      })();
-
-      /* ═══════════════════════════════════════
-   RIPPLE
-═══════════════════════════════════════ */
-      document
-        .getElementById("check-btn")
-        .addEventListener("click", function (e) {
-          const r = document.createElement("span");
-          const rc = this.getBoundingClientRect();
-          const sz = Math.max(rc.width, rc.height);
-          r.className = "rpl";
-          r.style.cssText = `width:${sz}px;height:${sz}px;left:${e.clientX - rc.left - sz / 2}px;top:${e.clientY - rc.top - sz / 2}px`;
-          this.appendChild(r);
-          setTimeout(() => r.remove(), 600);
-        });
-
-      /* ═══════════════════════════════════════
-   EXAMPLE LINKS
-═══════════════════════════════════════ */
-      function tryLink(url) {
-        const inp = document.getElementById("url-input");
-        inp.value = url;
-        inp.focus();
-      }
-
-      /* ═══════════════════════════════════════
-   SESSION CLOCK
-═══════════════════════════════════════ */
+        }),
+        document
+          .getElementById("check-btn")
+          .addEventListener("click", function (e) {
+            const t = document.createElement("span"),
+              n = this.getBoundingClientRect(),
+              s = Math.max(n.width, n.height);
+            ((t.className = "ripple"),
+              (t.style.cssText = `width:${s}px;height:${s}px;left:${e.clientX - n.left - s / 2}px;top:${e.clientY - n.top - s / 2}px`),
+              this.appendChild(t),
+              setTimeout(() => t.remove(), 600));
+          }));
       const t0 = Date.now();
       setInterval(() => {
-        const s = Math.floor((Date.now() - t0) / 1000);
+        const e = Math.floor((Date.now() - t0) / 1e3);
         document.getElementById("sess").textContent =
-          `${String(Math.floor(s / 60)).padStart(2, "0")}:${String(s % 60).padStart(2, "0")}`;
-      }, 1000);
-
-      /* ═══════════════════════════════════════
-   LOADING STEPS — plain english
-═══════════════════════════════════════ */
+          `${String(Math.floor(e / 60)).padStart(2, "0")}:${String(e % 60).padStart(2, "0")}`;
+      }, 1e3);
       const STEPS = [
         { icon: "🌐", text: "Checking if the domain actually exists" },
         { icon: "📅", text: "Checking how old the website is" },
@@ -1687,253 +1798,201 @@
         { icon: "🔬", text: "Cross-checking with security databases" },
         { icon: "📋", text: "Preparing your safety report" },
       ];
-
       let stepT = null,
         scanN = 0;
-
-      function startLoading(url) {
-        document.getElementById("loading-url").textContent = url;
-        document.getElementById("prog-fill").style.width = "0%";
-
-        const sl = document.getElementById("step-list");
-        sl.innerHTML = STEPS.map(
-          (s, i) => `
-    <div class="step-row idle" id="sr${i}">
-      <div class="step-icon-wrap" id="si${i}">${s.icon}</div>
-      <span class="step-text">${s.text}</span>
-    </div>`,
-        ).join("");
-
-        let i = 0;
-        function tick() {
-          if (i > 0) {
-            document
-              .getElementById(`sr${i - 1}`)
-              ?.classList.replace("running", "done");
-            document.getElementById(`si${i - 1}`).textContent = "✓";
-          }
-          if (i < STEPS.length) {
-            const el = document.getElementById(`sr${i}`);
-            el.classList.replace("idle", "running");
-            document.getElementById("prog-fill").style.width =
-              `${Math.round((i / (STEPS.length - 1)) * 88)}%`;
-            i++;
-            stepT = setTimeout(tick, 580);
-          }
-        }
-        tick();
+      function startLoading(e) {
+        ((document.getElementById("loading-url").textContent = e),
+          (document.getElementById("prog-fill").style.width = "0%"),
+          (document.getElementById("step-list").innerHTML = STEPS.map(
+            (e, t) =>
+              `<div class="step-row idle" id="sr${t}">\n       <div class="step-icon-wrap" id="si${t}">${e.icon}</div>\n       <span class="step-text">${e.text}</span>\n     </div>`,
+          ).join("")));
+        let t = 0;
+        !(function e() {
+          (t > 0 &&
+            (document
+              .getElementById("sr" + (t - 1))
+              ?.classList.replace("running", "done"),
+            (document.getElementById("si" + (t - 1)).textContent = "✓")),
+            t < STEPS.length &&
+              (document
+                .getElementById(`sr${t}`)
+                .classList.replace("idle", "running"),
+              (document.getElementById("prog-fill").style.width =
+                `${Math.round((t / (STEPS.length - 1)) * 88)}%`),
+              t++,
+              (stepT = setTimeout(e, 580))));
+        })();
       }
       function stopLoading() {
-        clearTimeout(stepT);
-        document.getElementById("prog-fill").style.width = "100%";
+        (clearTimeout(stepT),
+          (document.getElementById("prog-fill").style.width = "100%"));
       }
-
-      /* ═══════════════════════════════════════
-   VERDICT HELPERS — binary safe / malicious
-═══════════════════════════════════════ */
-      const isSafe = (p) => p === "Safe";
-
-      const verdictConfig = {
-        safe: {
-          cls: "safe",
-          emoji: "✅",
-          word: "Looks Safe!",
-          explain:
-            "Good news — this link appears safe to click. We found no signs of threats.",
-        },
-        bad: {
-          cls: "bad",
-          emoji: "🚨",
-          word: "Dangerous!",
-          explain:
-            "Do NOT click this link. Our system detected signs of a harmful or scam website.",
-        },
-      };
-
-      function describeHow(source) {
-        if (!source) return "Our security system completed the analysis.";
-        const s = source.toLowerCase();
-        if (s.includes("dns"))
-          return "This domain doesn't exist on the internet at all. It fails the most basic check — real websites always have a valid address. This is a strong sign of a fake or mistyped link.";
-        if (s.includes("whois") || s.includes("tier 0"))
-          return "This website was registered very recently. Scam and phishing websites are almost always brand-new, so this is a serious warning sign.";
-        if (s.includes("virustotal") || s.includes("tier 2"))
-          return "This result was confirmed by VirusTotal — a trusted service that checks links against 70+ antivirus companies and security databases from around the world.";
-        if (s.includes("fallback") || s.includes("no vt"))
-          return "Our AI made this call. VirusTotal had no record of this URL, so we relied entirely on our machine learning model to decide.";
-        return "Our AI model examined 26 different signals in this link — things like the words it contains, how long it is, how the domain is structured, and whether it matches known threat patterns.";
+      const isSafe = (e) => "Safe" === e,
+        verdictConfig = {
+          safe: {
+            cls: "safe",
+            emoji: "✅",
+            word: "Looks Safe!",
+            explain:
+              "Good news — this link appears safe to click. We found no signs of threats.",
+          },
+          bad: {
+            cls: "danger",
+            emoji: "🚨",
+            word: "Dangerous!",
+            explain:
+              "Do NOT click this link. Our system detected signs of a harmful or scam website.",
+          },
+        };
+      function describeHow(e) {
+        if (!e) return "Our security system completed the analysis.";
+        const t = e.toLowerCase();
+        return t.includes("dns")
+          ? "This domain doesn't exist on the internet at all. It fails the most basic check — real websites always have a valid address. This is a strong sign of a fake or mistyped link."
+          : t.includes("whois") || t.includes("tier 0")
+            ? "This website was registered very recently. Scam and phishing websites are almost always brand-new, so this is a serious warning sign."
+            : t.includes("virustotal") || t.includes("tier 2")
+              ? "This result was confirmed by VirusTotal — a trusted service that checks links against 70+ antivirus companies and security databases from around the world."
+              : t.includes("fallback") || t.includes("no vt")
+                ? "Our AI made this call. VirusTotal had no record of this URL, so we relied entirely on our machine learning model to decide."
+                : "Our AI model examined multiple signals in this link — things like the words it contains, how long it is, how the domain is structured, and whether it matches known threat patterns.";
       }
-
-      function classifyFactor(f) {
-        const t = f.toLowerCase();
-        if (
-          t.includes("no major") ||
+      function classifyFactor(e) {
+        const t = e.toLowerCase();
+        return t.includes("no major") ||
           t.includes("trusted") ||
           t.includes("whitelisted")
-        )
-          return "ok";
-        if (
-          t.includes("newly") ||
-          t.includes("recently") ||
-          t.includes("risky") ||
-          t.includes("suspicious") ||
-          t.includes("short-term") ||
-          t.includes("hyphens")
-        )
-          return "warn";
-        return "bad";
+          ? "ok"
+          : t.includes("newly") ||
+              t.includes("recently") ||
+              t.includes("risky") ||
+              t.includes("suspicious") ||
+              t.includes("short-term") ||
+              t.includes("hyphens")
+            ? "warn"
+            : "bad";
       }
-
-      function shortSrc(src) {
-        if (!src) return "—";
-        const s = src.toLowerCase();
-        if (s.includes("virustotal") || s.includes("tier 2"))
-          return "VirusTotal";
-        if (s.includes("whois") || s.includes("tier 0")) return "WHOIS";
-        if (s.includes("dns")) return "DNS";
-        return "AI Model";
+      function shortSrc(e) {
+        if (!e) return "—";
+        const t = e.toLowerCase();
+        return t.includes("virustotal") || t.includes("tier 2")
+          ? "VirusTotal"
+          : t.includes("whois") || t.includes("tier 0")
+            ? "WHOIS"
+            : t.includes("dns")
+              ? "DNS"
+              : "AI Model";
       }
-
-      /* ═══════════════════════════════════════
-   FORM SUBMIT
-═══════════════════════════════════════ */
       document.getElementById("form").addEventListener("submit", async (e) => {
         e.preventDefault();
-        const url = document.getElementById("url-input").value.trim();
-        if (!url) return;
-
-        const btn = document.getElementById("check-btn");
-        const loadCard = document.getElementById("loading-card");
-        const resultDiv = document.getElementById("result");
-
-        btn.disabled = true;
-        document.getElementById("btn-txt").textContent = "⏳  Checking…";
-        loadCard.classList.add("on");
-        resultDiv.classList.remove("show");
-        resultDiv.style.display = "none";
-
-        startLoading(url);
-
+        const t = document.getElementById("url-input").value.trim();
+        if (!t) return;
+        const n = document.getElementById("check-btn"),
+          s = document.getElementById("loading-card"),
+          o = document.getElementById("result");
+        ((n.disabled = !0),
+          (document.getElementById("btn-txt").textContent = "⏳  Checking…"),
+          s.classList.add("on"),
+          o.classList.remove("show"),
+          (o.style.display = "none"),
+          startLoading(t));
         try {
-          const res = await fetch("http://127.0.0.1:8000/api/analyze", {
+          const e = await fetch("http://127.0.0.1:8000/api/analyze", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ url }),
+            body: JSON.stringify({ url: t }),
           });
-          if (!res.ok) throw new Error(`Server error (${res.status})`);
-          const data = await res.json();
-
-          const pred = data.final_prediction || "Malicious";
-          const conf = data.confidence;
-          const isNum = typeof conf === "number";
-          const safe = isSafe(pred);
-          const cfg = safe ? verdictConfig.safe : verdictConfig.bad;
-
-          /* — Verdict — */
-          const vcard = document.getElementById("verdict");
-          vcard.className = `verdict ${cfg.cls}`;
-          document.getElementById("v-emoji").textContent = cfg.emoji;
-          document.getElementById("v-word").textContent = cfg.word;
-          document.getElementById("v-explain").textContent = cfg.explain;
-          document.getElementById("v-url").textContent = url;
-
-          /* — Stats — */
-          document.getElementById("st-conf").textContent = isNum
-            ? `${conf}%`
-            : "Verified ✓";
-          document.getElementById("st-time").textContent =
-            new Date().toLocaleTimeString([], {
-              hour: "2-digit",
-              minute: "2-digit",
-              hour12: true,
-            });
-
-          /* — Confidence card OR VT card — */
-          const cc = document.getElementById("conf-card");
-          const vc = document.getElementById("vt-card");
-          if (isNum) {
-            cc.style.display = "block";
-            vc.style.display = "none";
-            const numEl = document.getElementById("conf-num");
-            numEl.textContent = `${conf}%`;
-            numEl.style.color = safe ? "var(--safe)" : "var(--mal)";
-            setTimeout(() => {
-              const jit = () =>
-                Math.min(
-                  100,
-                  Math.max(0, conf + (Math.random() * 18 - 9)),
-                ).toFixed(0);
-              [
-                ["b1", "p1"],
-                ["b2", "p2"],
-                ["b3", "p3"],
-                ["b4", "p4"],
-              ].forEach(([b, p]) => {
-                const v = jit();
-                document.getElementById(b).style.width = `${v}%`;
-                document.getElementById(p).textContent = `${v}%`;
-              });
-            }, 130);
-          } else {
-            cc.style.display = "none";
-            vc.style.display = "flex";
-            document.getElementById("vt-body").textContent =
-              data.details ||
-              "Checked against 70+ antivirus and security services worldwide.";
-          }
-
-          /* — Signals — */
-          const sig = document.getElementById("signals");
-          sig.innerHTML = "";
-          (data.risk_factors || []).forEach((f, i) => {
-            const cls = classifyFactor(f);
-            const s = document.createElement("span");
-            s.className = `sig-chip ${cls}`;
-            s.style.animationDelay = `${i * 0.07}s`;
-            s.textContent = f;
-            sig.appendChild(s);
-          });
-
-          /* — How — */
-          document.getElementById("how-body").textContent = describeHow(
-            data.source,
-          );
-
-          /* — History — */
-          scanN++;
-          document.getElementById("hist-badge").textContent =
-            `${scanN} checked`;
-          document.getElementById("hist-empty")?.remove();
-
-          const row = document.createElement("div");
-          row.className = `hist-row ${safe ? "hs" : "hm"}`;
-          row.innerHTML = `
-      <span class="h-url" title="${url}">${url}</span>
-      <span class="h-badge ${safe ? "hb-s" : "hb-m"}">${safe ? "Safe" : "Unsafe"}</span>
-      <span class="h-src">${shortSrc(data.source)}</span>
-    `;
-          document.getElementById("hist-body").prepend(row);
-
-          /* — Show result — */
-          resultDiv.style.display = "block";
-          void resultDiv.offsetWidth;
-          resultDiv.classList.add("show");
-          setTimeout(
-            () => res.scrollIntoView({ behavior: "smooth", block: "start" }),
-            60,
-          );
-          document.getElementById("url-input").value = "";
-        } catch (err) {
-          console.error(err);
-          alert(
-            `Could not complete the check.\n\nError: ${err.message}\n\nMake sure the server is running.`,
-          );
+          if (!e.ok) throw new Error(`Server error (${e.status})`);
+          const n = await e.json(),
+            s = n.final_prediction || "Malicious",
+            i = n.confidence,
+            a = "number" == typeof i,
+            d = isSafe(s),
+            c = d ? verdictConfig.safe : verdictConfig.bad;
+          ((document.getElementById("verdict-banner").className =
+            `verdict-banner ${c.cls}`),
+            (document.getElementById("v-emoji").textContent = c.emoji),
+            (document.getElementById("v-word").textContent = c.word),
+            (document.getElementById("v-explain").textContent = c.explain),
+            (document.getElementById("v-url").textContent = t));
+          const l = document.getElementById("st-conf");
+          ((l.textContent = a ? `${i}%` : "Verified ✓"),
+            (l.className = "stat-value " + (d ? "green" : "red")),
+            (document.getElementById("st-time").textContent =
+              new Date().toLocaleTimeString([], {
+                hour: "2-digit",
+                minute: "2-digit",
+                hour12: !0,
+              })));
+          const r = document.getElementById("conf-card"),
+            m = document.getElementById("vt-card");
+          if (a) {
+            ((r.style.display = "block"), m.classList.remove("on"));
+            const e = document.getElementById("conf-num");
+            ((e.textContent = `${i}%`),
+              (e.style.color = d ? "var(--safe)" : "var(--danger)"),
+              setTimeout(() => {
+                [
+                  ["b1", "p1"],
+                  ["b2", "p2"],
+                  ["b3", "p3"],
+                  ["b4", "p4"],
+                ].forEach(([e, t]) => {
+                  const n = Math.min(
+                    100,
+                    Math.max(0, i + (18 * Math.random() - 9)),
+                  ).toFixed(0);
+                  ((document.getElementById(e).style.width = `${n}%`),
+                    (document.getElementById(t).textContent = `${n}%`));
+                });
+              }, 130));
+          } else
+            ((r.style.display = "none"),
+              m.classList.add("on"),
+              (document.getElementById("vt-body").textContent =
+                n.details ||
+                "Checked against 70+ antivirus and security services worldwide."));
+          const u = document.getElementById("signals");
+          ((u.innerHTML = ""),
+            (n.risk_factors || []).forEach((e, t) => {
+              const n = classifyFactor(e),
+                s = document.createElement("span");
+              ((s.className = `sig-chip ${n}`),
+                (s.style.animationDelay = 0.07 * t + "s"),
+                (s.textContent = e),
+                u.appendChild(s));
+            }),
+            (document.getElementById("how-body").textContent = describeHow(
+              n.source,
+            )),
+            scanN++,
+            (document.getElementById("hist-badge").textContent =
+              `${scanN} checked`),
+            document.getElementById("hist-empty")?.remove());
+          const h = document.createElement("div");
+          ((h.className = "hist-row " + (d ? "hs" : "hm")),
+            (h.innerHTML = `\n      <span class="h-url" title="${t}">${t}</span>\n      <span class="h-badge ${d ? "hb-s" : "hb-m"}">${d ? "Safe" : "Unsafe"}</span>\n      <span class="h-src">${shortSrc(n.source)}</span>`),
+            document.getElementById("hist-body").prepend(h),
+            (o.style.display = "block"),
+            o.offsetWidth,
+            o.classList.add("show"),
+            setTimeout(
+              () => o.scrollIntoView({ behavior: "smooth", block: "start" }),
+              60,
+            ),
+            (document.getElementById("url-input").value = ""));
+        } catch (e) {
+          (console.error(e),
+            alert(
+              `Could not complete the check.\n\nError: ${e.message}\n\nMake sure the FastAPI server is running on port 8000.`,
+            ));
         } finally {
-          btn.disabled = false;
-          document.getElementById("btn-txt").textContent =
-            "🔍\u00A0\u00A0Check This Link";
-          loadCard.classList.remove("on");
-          stopLoading();
+          ((n.disabled = !1),
+            (document.getElementById("btn-txt").textContent =
+              "🔍  SCAN THIS LINK"),
+            s.classList.remove("on"),
+            stopLoading());
         }
       });
     </script>
