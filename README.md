@@ -159,8 +159,8 @@ Then visit: `http://127.0.0.1:8000`
 ---
 
 ## 🌍 Website
-This project is deployed via Render.
-Link: 
+This project is deployed via Render.  
+Link [here](https://netshield-lu9j.onrender.com/)
 
 
 ---
